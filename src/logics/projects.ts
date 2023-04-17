@@ -61,7 +61,7 @@ const listProjects = async (
   };
 
   const queryResult: QueryResult = await client.query(queryConfig);
-  console.log(queryResult.rows)
+ 
   return resp.status(200).json(queryResult.rows);
 };
 
@@ -139,7 +139,6 @@ const createTechnologies = async (
 
   const id2: number = queryResult.rows[0].id
  
-
   const tecData: TProjectsTechnologiesRequest = {
     addedIn: new Date(),
     technologyId: id2,
@@ -160,7 +159,6 @@ const createTechnologies = async (
 
   const queryResult2: QueryResult = await client.query(queryString2)
  
-
   const queryString3: string = `
         SELECT 
             t."id" "technologyId",

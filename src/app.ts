@@ -1,6 +1,5 @@
 import express, { Application } from "express";
 import "dotenv/config";
-import { startDatabase } from "./database";
 import {
   createDevelopers,
   createInfosDevelopers,
@@ -35,7 +34,5 @@ app.patch("/projects/:id", ensureIdExistProject2, ensureDeveloperIdExist, update
 app.delete("/projects/:id", ensureIdExistProject2, deleteProjects);
 app.post("/projects/:id/technologies", ensureTecExist, ensureIdExistProject2, ensureTecAdd, createTechnologies);
 app.delete("/projects/:id/technologies/:name", ensureIdExistProject2, ensureTecExist2, ensureTecAdd2, deleteTechnologies);
-
-
 
 export default app;
